@@ -4,13 +4,13 @@ import re
 from pygame.locals import *
 from sys import exit
 
-SCREEN_WIDTH = 800
+SCREEN_WIDTH = 1000
 SCREEN_HEIGHT = 640
 FONT_SIZE = 70
 FONT = 'ZiTi.ttf'
-END = '大鸡大利，今晚吃鸡！'
+END = '大吉大利，今晚吃鸡！'
 file_name = 'words.txt'
-word_regex = re.compile(r'([a-zA-Z\-]+)\s*([\w\,]+)')
+word_regex = re.compile(r'([a-zA-Z\-]+)\s*(.*)')
 
 # init
 pygame.init()
@@ -66,9 +66,10 @@ while True:
     screen.fill(0)
     word_font = pygame.font.Font(FONT, FONT_SIZE)
     if translation_flag:
-        word_text = word_font.render(translation, True, (128, 128, 128))
+        word_text = word_font.render(translation, True, (255, 255, 255))
+
     else:
-        word_text = word_font.render(word, True, (128, 128, 128))
+        word_text = word_font.render(word, True, (255, 255, 255))
     text_rect = word_text.get_rect()
     text_rect.midbottom = [(SCREEN_WIDTH / 2), (SCREEN_HEIGHT / 2)]
     screen.blit(word_text, text_rect)
