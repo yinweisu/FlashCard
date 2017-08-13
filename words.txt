@@ -1,0 +1,2 @@
+abandon 放弃
+ad-hoc 特质
